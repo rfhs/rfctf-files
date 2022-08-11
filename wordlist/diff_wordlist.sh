@@ -30,7 +30,7 @@ fi
 printf "Removing common dict words...\n"
 for i in $(find /usr/share/dict/skullsecurity -type f) $(find /usr/share/dict/raft-wordlists -type f)  $(find /usr/share/dict/seclists/Passwords -type f) $(find /usr/share/dict/theHarvester -type f)$(find /usr/share/dict -maxdepth 1 -type f) ; do
   if [ -e "${i}" ] && [ ! -L "${i}" ]; then
-    if [ "${i/.csv}" != "${i}" ] || [ "${i/.gz}" != "${i}" ] || [ "${i/.tgz}" != "${i}" ]; then
+    if [ "${i/.csv}" != "${i}" ] || [ "${i/.gz}" != "${i}" ] || [ "${i/.tgz}" != "${i}" ] || [ "${i/.bz2}" != "${i}" ]; then
       printf "Skipping ${i}...\n"
       continue
     fi
